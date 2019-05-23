@@ -68,8 +68,6 @@ resource "aws_db_instance" "this" {
 
   enabled_cloudwatch_logs_exports = "${var.enabled_cloudwatch_logs_exports}"
 
-  timeouts = "${var.timeouts}"
-
   deletion_protection = "${var.deletion_protection}"
 
   tags = "${merge(var.tags, map("Name", format("%s", var.identifier)))}"
@@ -125,8 +123,6 @@ resource "aws_db_instance" "this_mssql" {
   timezone = "${var.timezone}"
 
   enabled_cloudwatch_logs_exports = "${var.enabled_cloudwatch_logs_exports}"
-
-  timeouts = "${var.timeouts}"
 
   deletion_protection = "${var.deletion_protection}"
 
