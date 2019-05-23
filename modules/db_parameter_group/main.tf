@@ -9,8 +9,6 @@ resource "aws_db_parameter_group" "this_no_prefix" {
   description = "${local.description}"
   family      = "${var.family}"
 
-  parameter = ["${var.parameters}"]
-
   tags = "${merge(var.tags, map("Name", format("%s", var.name)))}"
 
   lifecycle {
@@ -24,8 +22,6 @@ resource "aws_db_parameter_group" "this" {
   name_prefix = "${var.name_prefix}"
   description = "${local.description}"
   family      = "${var.family}"
-
-  parameter = ["${var.parameters}"]
 
   tags = "${merge(var.tags, map("Name", format("%s", var.identifier)))}"
 
